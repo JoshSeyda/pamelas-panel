@@ -1,0 +1,27 @@
+<%# t.string "firstname"
+t.string "lastname"
+t.string "username"
+t.string "email"
+t.string "password_digest"
+t.integer "age"
+t.date "birthday"
+t.string "education" %> 
+<%= form_for  @student do |f| %>
+  <%= f.label :firstname  %>
+  <%= f.text_field :firstname, class:"names" %>
+  <%= f.label :lastname %>
+  <%= f.text_field :lastname, class:"names" %>
+  <%= f.label :username %>
+  <%= f.text_field :username, class:"names" %>
+  <%= f.label :email %>
+  <%= f.text_field :email, class:"email" %>
+  <%= f.label :password %>
+  <%= f.text_field :password_digest, class:"password" %>
+  <%= f.label :age %>
+  <%= f.number_field :age, class:"age" %>
+  <%= f.label :birthday %>
+  <%= f.text_field :birthday, class:"birthday" %>
+  <%= f.label :education %>
+  <%= f.text_field :education, class:"education" %>
+  <%= f.submit %>
+<% end %>

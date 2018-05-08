@@ -1,0 +1,21 @@
+<%= form_for  @teacher do |f| %>
+  <%= f.label :firstname  %>
+  <%= f.text_field :firstname, class:"names" %>
+  <%= f.label :lastname %>
+  <%= f.text_field :lastname, class:"names"  %>
+  <%= f.label :username %>
+  <%= f.text_field :username, class:"names"  %>
+  <%= f.label :email %>
+  <%= f.text_field :email, class:"email" %>
+  <%= f.label :password %>
+  <%= f.text_field :password_digest, class:"password" %>
+  <%= f.label :age %>
+  <%= f.number_field :age, class:"age" %>
+  <%= f.label :salary %>
+  <%= f.text_field :salary, class:"salary" %>
+  <%= f.label :education %>
+  <%= f.text_field :education, class:"education" %>
+  <%= f.label :specialty %>
+  <%= f.text_field :specialty, class:"specialty" %>
+  <%= f.submit %>
+<% end %>

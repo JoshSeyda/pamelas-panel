@@ -1,0 +1,15 @@
+<div  class="form-signin">
+<%= form_for  @admin do |f|  %>
+  <%= f.label :firstname , class:"d-block" %>
+  <%= f.text_field :firstname, class:"names"%>
+  <%= f.label :lastname , class:"d-block"%>
+  <%= f.text_field :lastname, class:"names" %>
+  <%= f.label :username , class:"d-block"%>
+  <%= f.text_field :username, class:"names" %>
+  <%= f.label :password , class:"d-block"%>
+  <%= f.text_field :password_digest %>
+  <%= f.label :email , class:"d-block"%>
+  <%= f.text_field :email %></br>
+  <%= f.submit %>
+<% end %>
+</div>

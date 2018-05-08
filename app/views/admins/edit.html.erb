@@ -1,0 +1,14 @@
+<div  class="form-signin">
+<%= form_for  @admin do |f|%>
+  <%= f.label :firstname , class:"d-block"  %>
+  <%= f.text_field :firstname, class:"names", value: @admin.firstname%>
+  <%= f.label :lastname, class:"d-block"  %>
+  <%= f.text_field :lastname, class:"names" , value: @admin.lastname %>
+  <%= f.label :password , class:"d-block" %>
+  <%= f.text_field :password_digest, class:"password" , value: @admin.password_digest%>
+  <%= f.label :email, class:"d-block"  %>
+  <%= f.text_field :email, class:"email" , value: @admin.email%></br>
+  <%= submit_tag("Update") %>
+<% end %>
+<%= link_to 'Delete', admin_path(@admin), method: :delete %>
+</div>

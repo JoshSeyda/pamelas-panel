@@ -1,0 +1,24 @@
+<div  class="form-signin">
+<%= form_for  @teacher do |f| %>
+  <%= f.label :firstname, class:"d-block"   %>
+  <%= f.text_field :firstname, class:"names", value: @teacher.firstname%>
+  <%= f.label :lastname, class:"d-block"  %>
+  <%= f.text_field :lastname, class:"names", value: @teacher.lastname %>
+  <%= f.label :username, class:"d-block"  %>
+  <%= f.text_field :username, class:"names", value: @teacher.username %>
+  <%= f.label :email, class:"d-block"  %>
+  <%= f.text_field :email, class:"email",value: @teacher.email%>
+  <%= f.label :password, class:"d-block"  %>
+  <%= f.text_field :password_digest, class:"password", value: @teacher.password_digest%>
+  <%= f.label :age, class:"d-block"  %>
+  <%= f.number_field :age, class:"age", value: @teacher.age%>
+  <%= f.label :salary, class:"d-block"  %>
+  <%= f.text_field :salary, class:"salary", value: @teacher.salary%>
+  <%= f.label :education, class:"d-block"  %>
+  <%= f.select :education, ['High School',  'College' , 'Masters',  'Phd']%>
+  <%= f.label :specialty, class:"d-block"  %>
+  <%= f.text_field :specialty, class:"specialty", value: @teacher.specialty%></br>
+  <%= f.submit %>
+<% end %>
+<%= link_to 'Delete', teacher_path(@teacher), method: :delete %>
+</div>

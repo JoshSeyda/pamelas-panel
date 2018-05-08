@@ -1,0 +1,12 @@
+<div class="row">
+<% @courses.each do |dept| %>
+<div class="card col-sm-4">
+  <div class="card-body">
+    <h5 class="card-title"><%= dept.name %></h5>
+    <p class="card-text"><%= dept.description %></p>
+    <a href="/courses/<%= dept.id %>" class="btn">View Cohorts</a>
+    <a href="/cohorts/new" class="btn">ADD Cohorts</a>
+  </div>
+</div>
+<% end %>
+</div>
