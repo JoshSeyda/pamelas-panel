@@ -1,0 +1,10 @@
+<h1>add a student to <%= @cohort.course.name %></h1>
+<div  class="form-signin">
+<%= form_for  @member do |f| %>
+  <%= f.hidden_field :cohort_id, value: @cohort.id%>
+   <%= f.label :student_id, class:"d-block"    %>
+  <%= f.text_field :student_id, class:"student_id" %>
+  </br>
+  <%= f.submit %>
+<% end %>
+</div>

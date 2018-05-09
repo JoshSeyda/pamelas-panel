@@ -1,21 +1,23 @@
+<div  class="form-signin">
 <%= form_for  @teacher do |f| %>
-  <%= f.label :firstname  %>
+  <%= f.label :firstname, class:"d-block"  %>
   <%= f.text_field :firstname, class:"names" %>
-  <%= f.label :lastname %>
+  <%= f.label :lastname, class:"d-block" %>
   <%= f.text_field :lastname, class:"names"  %>
-  <%= f.label :username %>
+  <%= f.label :username, class:"d-block" %>
   <%= f.text_field :username, class:"names"  %>
-  <%= f.label :email %>
+  <%= f.label :email, class:"d-block" %>
   <%= f.text_field :email, class:"email" %>
-  <%= f.label :password %>
+  <%= f.label :password, class:"d-block" %>
   <%= f.text_field :password_digest, class:"password" %>
-  <%= f.label :age %>
+  <%= f.label :age, class:"d-block" %>
   <%= f.number_field :age, class:"age" %>
-  <%= f.label :salary %>
+  <%= f.label :salary, class:"d-block" %>
   <%= f.text_field :salary, class:"salary" %>
-  <%= f.label :education %>
+  <%= f.label :education, class:"d-block" %>
   <%= f.text_field :education, class:"education" %>
-  <%= f.label :specialty %>
-  <%= f.text_field :specialty, class:"specialty" %>
+  <%= f.label :specialty, class:"d-block" %>
+  <%= f.text_field :specialty, class:"specialty" %></br>
   <%= f.submit %>
 <% end %>
+</div>

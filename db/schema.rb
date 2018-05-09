@@ -32,13 +32,6 @@ ActiveRecord::Schema.define(version: 2018_05_02_154320) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "cohort_students", force: :cascade do |t|
-    t.integer "cohort_id"
-    t.integer "student_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
   create_table "cohorts", force: :cascade do |t|
     t.date "start_date"
     t.date "end_date"
@@ -51,6 +44,13 @@ ActiveRecord::Schema.define(version: 2018_05_02_154320) do
   create_table "courses", force: :cascade do |t|
     t.string "name"
     t.string "description"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "members", force: :cascade do |t|
+    t.integer "cohort_id"
+    t.integer "student_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

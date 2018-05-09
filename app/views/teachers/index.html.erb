@@ -1,1 +1,28 @@
-<h1>Hello Squirrel!</h1>
+<h3> All Teachers </h3>
+  <table class="table table-hover">
+  <thead>
+    <tr>
+      <th class="table-head" scope="col">First Name</th>
+      <th class="table-head" scope="col">Last Name</th>
+      <th class="table-head" scope="col">Age</th>
+      <th class="table-head" scope="col">Salary</th>
+      <th class="table-head" scope="col">Education</th>
+      <th class="table-head" scope="col">Specialty</th>
+      <th class="table-head" scope="col"></th>
+    </tr>
+  </thead>
+  <tbody>
+  <%@teachers = Teacher.all%>
+  <% @teachers.each do |teacher| %> 
+    <tr>
+      <td scope="row"><%= teacher.firstname %></td>
+      <td><%= teacher.lastname %></td>
+      <td><%= teacher.age %></td>
+      <td><%= teacher.salary %></td>
+      <td><%= teacher.education %></td>
+      <td><%= teacher.specialty.join(", ") %></td>
+      <td><a href="/teachers/<%=teacher.id%>/edit">Edit</a></td>
+    </tr>
+    <% end %>
+  </tbody>
+</table>

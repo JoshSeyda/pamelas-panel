@@ -1,8 +1,10 @@
+<div  class="form-signin">
 <%= form_for  @course do |f| %>
-   <%= f.label :name  %>
-  <%= f.text_field :name, class:"names" value: @course.name%>
-  <%= f.label :description %>
-  <%= f.text_field :description, class:"names" value: @course.description %>
+   <%= f.label :name, class:"d-block"   %>
+  <%= f.text_field :name, class:"names", value: @course.name%>
+  <%= f.label :description, class:"d-block"  %>
+  <%= f.text_field :description, class:"names", value: @course.description %></br>
   <%= f.submit %>
 <% end %>
 <%= link_to 'Delete', course_path(@course), method: :delete %>
+</div>
