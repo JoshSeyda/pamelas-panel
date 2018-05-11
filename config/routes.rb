@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
 
-  root 'analytics#show'
+  devise_for :users
+  get 'pages/index'
+  root 'pages#index'
   
   resources :admins
   resources :teachers

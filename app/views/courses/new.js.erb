@@ -1,0 +1,5 @@
+
+$('#modalCenter').on('hide.bs.modal', function(){
+    console.log('Im hitting this file for the create action');
+  document.getElementById('row').insertAdjacentHTML('beforeend', '<%= j render partial: "new_course", locals: {course: @new_course} %>');
+});

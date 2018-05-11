@@ -1,4 +1,4 @@
-<div class="row">
+<div class="row " id="row">
 <% @courses.each do |dept| %>
 <div class="card col-sm-4">
   <div class="card-body">
@@ -10,4 +10,36 @@
 </div>
 <% end %>
 </div>
-<h4 class="student-table offset-5"><a href="/courses/new">Add a course</a></h4>
+<%# <h4 class="student-table offset-5"><a href="/courses/new">Add a course</a></h4> %>
+<!-- Button trigger modal -->
+<button type="button" class="btn student-table offset-5" data-toggle="modal" data-target="#modalCenter">
+<%= link_to "New", new_course_path(@course), remote: true %>
+</button>
+
+<!-- Modal -->
+<div class="modal fade " id="modalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLongTitle">Add a new course below</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+<div  class="form-signin">
+<%= form_for  @course, remote: true, authenticity_token: true  do  |f| %>
+   <%= f.label :name , class:"d-block"  %>
+  <%= f.text_field :name, class:"names" %>
+  <%= f.label :description , class:"d-block" %>
+  <%= f.text_field :description, class:"names" %></br>
+  <%= f.submit %>
+<% end %>
+</div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>

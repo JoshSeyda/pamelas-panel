@@ -1,6 +1,6 @@
 <h3 class="sm-col-6 offset-4">Add a new course below</h3>
 <div  class="form-signin">
-<%= form_for  @course do |f| %>
+<%= form_for  @course remote: true do |f| %>
    <%= f.label :name , class:"d-block"  %>
   <%= f.text_field :name, class:"names" %>
   <%= f.label :description , class:"d-block" %>

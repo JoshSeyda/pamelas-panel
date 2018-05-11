@@ -1,11 +1,12 @@
 class CoursesController < ApplicationController
     def index
         @courses = Course.all
+        @course = Course.new
     end
 
     def create
-        @course = Course.create(course_params)
-        redirect_to "/courses/#{@course.id}"
+        @new_course = Course.create(course_params)
+    
     end
 
     def new
