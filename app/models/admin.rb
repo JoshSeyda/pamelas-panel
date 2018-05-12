@@ -4,4 +4,5 @@ class Admin < ApplicationRecord
   devise :database_authenticatable, :registerable,
   :recoverable, :rememberable, :trackable, :validatable
     has_many :admin_notes, dependent: :destroy
+    has_one :user, as: :user_type, autosave: true, dependent: :destroy
 end
