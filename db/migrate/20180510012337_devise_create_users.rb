@@ -8,8 +8,8 @@ class DeviseCreateUsers < ActiveRecord::Migration[5.2]
       t.string :encrypted_password, null: false, default: ""
 
       # Polymorphic Relationship Links
-      t.integer :user_type_id
-      t.string :user_type_name
+      t.integer :user_type_id, null: true
+      t.string :user_type_type, null: true
       
       ## Recoverable
       t.string   :reset_password_token

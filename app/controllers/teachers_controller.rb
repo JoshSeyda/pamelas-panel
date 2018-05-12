@@ -7,11 +7,13 @@ class TeachersController < ApplicationController
 
     def create
         @teacher = Teacher.create(teacher_params)
+        @teacher.build_user(email: params[:email], password: params[:password]).save
         redirect_to "/teachers/#{@teacher.id}"
     end
 
     def new
         @teacher = Teacher.new
+        
     end
 
     def show

@@ -13,7 +13,11 @@
   <%= f.label :education, class:"d-block" %>
   <%= f.text_field :education, class:"education" %>
   <%= f.label :specialty, class:"d-block" %>
-  <%= f.text_field :specialty, class:"specialty" %></br>
+  <%= f.text_field :specialty, class:"specialty" %>
+  <%=f.label :email, class:"d-block" %>
+  <%= f.email_field(:email) %>
+  <%=f.label :password, class:"d-block" %>
+  <%= f.password_field_tag(:password) %></br>
   <%= f.submit %>
 <% end %>
 </div>
