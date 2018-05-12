@@ -10,8 +10,8 @@
   <%= f.number_field :age, class:"age", value: @student.age%>
   <%= f.label :birthday, class:"d-block" %>
   <%= f.text_field :birthday, class:"birthday", value: @student.birthday%>
-  <%= f.label :education, class:"d-block" %>
-  <%= f.text_field :education, class:"education", value: @student.education%></br>
+  <%= f.label :education, class:"d-block"  %>
+  <%= f.select :education, ['High School',  'College' , 'Masters',  'Phd']%>
   <%= f.submit %>
 <% end %>
 <%= link_to 'Delete', student_path(@student), method: :delete %>

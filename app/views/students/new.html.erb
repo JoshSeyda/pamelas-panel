@@ -1,5 +1,5 @@
 <div  class="form-signin">
-<%= form_for  @student do |f| %>
+<%= form_for  @new_student do |f| %>
   <%= f.label :firstname, class:"d-block"  %>
   <%= f.text_field :firstname, class:"names" %>
   <%= f.label :lastname, class:"d-block" %>
@@ -10,8 +10,12 @@
   <%= f.number_field :age, class:"age" %>
   <%= f.label :birthday, class:"d-block" %>
   <%= f.text_field :birthday, class:"birthday" %>
-  <%= f.label :education, class:"d-block" %>
-  <%= f.text_field :education, class:"education" %></br>
+  <%= f.label :education, class:"d-block"  %>
+  <%= f.select :education, ['High School',  'College' , 'Masters',  'Phd']%>
+    <%=f.label :email, class:"d-block" %>
+ <input type="email" name="email"></input>
+ <%=f.label :password, class:"d-block" %>
+ <input type="password" name="password"></input>
   <%= f.submit %>
 <% end %>
 </div>

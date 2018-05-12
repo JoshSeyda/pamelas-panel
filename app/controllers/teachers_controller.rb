@@ -3,16 +3,17 @@ class TeachersController < ApplicationController
     
     def index
         @teachers = Teacher.all
+        @new_teacher = Teacher.new
     end
 
     def create
-        @teacher = Teacher.create(teacher_params)
-        @teacher.build_user(email: params[:email], password: params[:password]).save
-        redirect_to "/teachers/#{@teacher.id}"
+        @new_teacher = Teacher.create(teacher_params)
+        @new_teacher.build_user(email: params[:email], password: params[:password]).save
+       
     end
 
     def new
-        @teacher = Teacher.new
+        @new_teacher = Teacher.new
         
     end
 
@@ -39,6 +40,6 @@ class TeachersController < ApplicationController
     private 
 
     def teacher_params
-       params.require(:teacher).permit(:firstname, :lastname, :username, :email, :password_digest, :age, :salary, :education, :birthday, :specialty) 
+       params.require(:teacher).permit(:firstname, :lastname, :username, :age, :salary, :education, :specialty) 
     end
 end

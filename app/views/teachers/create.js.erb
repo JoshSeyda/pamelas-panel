@@ -1,0 +1,5 @@
+    console.log('Im hitting this file for the create action');
+  
+$( document ).ready(function() {
+    document.getElementById('teacher_table').insertAdjacentHTML('beforeend', '<%= j render partial: "new_teacher" %>');
+});

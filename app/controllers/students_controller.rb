@@ -3,15 +3,16 @@ class StudentsController < ApplicationController
     
     def index
         @students = Student.all
+        @new_student = Student.new
     end
 
     def create
-        @student = Student.create(student_params)
-        redirect_to "/students/#{@student.id}"
+        @new_student = Student.create(student_params)
+        
     end
 
     def new
-        @student = Student.new
+        @new_student = Student.new
     end
 
     def show
@@ -37,7 +38,7 @@ class StudentsController < ApplicationController
     private 
 
     def student_params
-       params.require(:student).permit(:firstname, :lastname, :username,:email,  :password_digest, :age, :birthday, :cohort_id, :education) 
+       params.require(:student).permit(:firstname, :lastname, :username,:age, :birthday, :cohort_id, :education) 
     end
 end
 

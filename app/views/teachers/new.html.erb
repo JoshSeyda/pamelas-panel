@@ -10,14 +10,14 @@
   <%= f.number_field :age, class:"age" %>
   <%= f.label :salary, class:"d-block" %>
   <%= f.text_field :salary, class:"salary" %>
-  <%= f.label :education, class:"d-block" %>
-  <%= f.text_field :education, class:"education" %>
+  <%= f.label :education, class:"d-block"  %>
+  <%= f.select :education, ['High School',  'College' , 'Masters',  'Phd']%>
   <%= f.label :specialty, class:"d-block" %>
   <%= f.text_field :specialty, class:"specialty" %>
   <%=f.label :email, class:"d-block" %>
-  <%= f.email_field(:email) %>
-  <%=f.label :password, class:"d-block" %>
-  <%= f.password_field_tag(:password) %></br>
+ <input type="email" name="email"></input>
+ <%=f.label :password, class:"d-block" %>
+ <input type="password" name="password"></input>
   <%= f.submit %>
 <% end %>
 </div>
