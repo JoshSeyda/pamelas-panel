@@ -1,4 +1,6 @@
 class MembersController < ApplicationController
+    before_action :authenticate_user! 
+    
     def index
         # @cohort = Cohort.find(params[:id])
         # @member = CohortStudent.new

@@ -6,7 +6,7 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-Admin.create(firstname:'Jorsh', lastname: 'TSSS', username: 'turnstile', )
+Admin.create(firstname:'Jorsh', lastname: 'TSSS', username: 'turnstile', email: "test@email.com", encrypted_password: "password" )
 Course.create(name: 'Astrophysics', description: 'Physics, in space!')
 Course.create(name: 'Economics', description: 'Money, trade, and the simultaneous downfall and foundation of civilization')
 Course.create(name: 'Baroque Music', description: 'The gnarliest of grandpa music')
