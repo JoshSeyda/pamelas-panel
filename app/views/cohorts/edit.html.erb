@@ -1,12 +1,14 @@
+<div  class="form-signin">
 <%= form_for  @cohort do |f| %>
-   <%= f.label :start_date  %>
-  <%= f.text_field :start_date, class:"names" value: @cohort.start_date%>
-  <%= f.label :end_date %>
-  <%= f.text_field :end_date, class:"names" value: @cohort.end_date %>
-  <%= f.label :course_id %>
-  <%= f.text_field :course_id, class:"course_id" value: @cohort.course_id%>
-  <%= f.label :teacher_id %>
-  <%= f.text_field :teacher_id, class:"teacher_id" value: @cohort.teacher_id%>
+   <%= f.label :start_date , class:"d-block"  %>
+  <%= f.text_field :start_date, class:"names", value: @cohort.start_date%>
+  <%= f.label :end_date, class:"d-block"  %>
+  <%= f.text_field :end_date, class:"names", value: @cohort.end_date %>
+  <%= f.label :course_id , class:"d-block" %>
+  <%= f.text_field :course_id, class:"course_id", value: @cohort.course_id%>
+  <%= f.label :teacher_id, class:"d-block"  %>
+  <%= f.text_field :teacher_id, class:"teacher_id", value: @cohort.teacher_id%></br>
   <%= f.submit %>
 <% end %>
 <%= link_to 'Delete', cohort_path(@cohort), method: :delete %>
+</div>

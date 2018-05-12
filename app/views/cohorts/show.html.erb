@@ -1,33 +1,32 @@
+<% @teacher = Teacher.find(@cohort.teacher_id) %>
 <div class="jumbotron jumbotron-fluid jumbotron-courses">
   <div class="container">
     <h1 class="display-4"><%= @course.name %></h1>
     <p class="lead"><%= @course.description %></p>
     <hr class="my-4">
-  <p>It uses utility classes for typography and spacing to space content out within the larger container.</p>
-  <a class="btn btn-lg" href="#" role="button">Learn more</a>
+  <p>Taught by Professor <%= @teacher.firstname %> <%= @teacher.lastname %>, Specializing in <%= @teacher.specialty.join %></p>
+  <p>Cohort runs from <%= @cohort.start_date %> until <%= @cohort.end_date %></p>
+  <h3 class="student-table"> Cohort Students </h3>
+  <table class="table table-hover">
+  <thead>
+    <tr>
+      <th class="table-head" scope="col">First</th>
+      <th class="table-head" scope="col">Last</th>
+      <th class="table-head" scope="col">Education</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @students = @cohort.students %>
+    <% @students.each do |student| %>
+    <tr>
+      <td scope="row"><%= student.firstname %></td>
+      <td><%= student.lastname %></td>
+      <td><%= student.education%></td>
+    </tr>
+    <% end %>
+  </tbody>
+</table>
+  <a class="btn btn-lg" href="/cohorts/addstudent/<%= @cohort.id %>" role="button">Add Student</a>
   </div>
 </div>
-<div class="row">
-<% @teacher = Teacher.find(@cohort.teacher_id) %>
-  <div class="col-sm-6">
-    <div class="card">
-    <h5 class="card-header"><%= @teacher.firstname %> <%= @teacher.lastname %></h5>
-      <div class="card-body">
-        <h5 class="card-title">Special title treatment</h5>
-        <p class="card-text">Cohort runs from <%= @cohort.start_date %> until <%= @cohort.end_date %></p>
-      </div>
-    </div>
-  </div>
-  <% @students = @cohort.students %>
-  <% @students.each do |student| %>
-  <div class="col-sm-6">
-    <div class="card">
-    <h5 class="card-header"><%= student.firstname %> <%= student.lastname %></h5>
-      <div class="card-body">
-        <h5 class="card-title"><%= student.education%> </h5>
-        <p class="card-text"><%= student.birthday %></p>
-      </div>
-    </div>
-  </div>
-  <% end %>
-  </div>
+  

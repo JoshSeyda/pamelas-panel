@@ -1,27 +1,21 @@
-<%# t.string "firstname"
-t.string "lastname"
-t.string "username"
-t.string "email"
-t.string "password_digest"
-t.integer "age"
-t.date "birthday"
-t.string "education" %> 
-<%= form_for  @student do |f| %>
-  <%= f.label :firstname  %>
+<div  class="form-signin">
+<%= form_for  @new_student do |f| %>
+  <%= f.label :firstname, class:"d-block"  %>
   <%= f.text_field :firstname, class:"names" %>
-  <%= f.label :lastname %>
+  <%= f.label :lastname, class:"d-block" %>
   <%= f.text_field :lastname, class:"names" %>
-  <%= f.label :username %>
+  <%= f.label :username, class:"d-block" %>
   <%= f.text_field :username, class:"names" %>
-  <%= f.label :email %>
-  <%= f.text_field :email, class:"email" %>
-  <%= f.label :password %>
-  <%= f.text_field :password_digest, class:"password" %>
-  <%= f.label :age %>
+  <%= f.label :age, class:"d-block" %>
   <%= f.number_field :age, class:"age" %>
-  <%= f.label :birthday %>
+  <%= f.label :birthday, class:"d-block" %>
   <%= f.text_field :birthday, class:"birthday" %>
-  <%= f.label :education %>
-  <%= f.text_field :education, class:"education" %>
+  <%= f.label :education, class:"d-block"  %>
+  <%= f.select :education, ['High School',  'College' , 'Masters',  'Phd']%>
+    <%=f.label :email, class:"d-block" %>
+ <input type="email" name="email"></input>
+ <%=f.label :password, class:"d-block" %>
+ <input type="password" name="password"></input>
   <%= f.submit %>
 <% end %>
+</div>

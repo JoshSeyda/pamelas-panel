@@ -135,3 +135,11 @@ body {
 .card-header {
     background-color: #EDE7D9;
 }
+
+.student-table {
+    margin-top: 5%;
+}
+
+.table-head {
+    font-weight: bolder;
+}

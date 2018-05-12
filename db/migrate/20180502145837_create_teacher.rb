@@ -4,8 +4,6 @@ class CreateTeacher < ActiveRecord::Migration[5.2]
       t.string :firstname
       t.string :lastname
       t.string :username
-      t.string :email
-      t.string :password_digest
       t.integer :age
       t.integer :salary
       t.string :education

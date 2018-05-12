@@ -1,20 +1,18 @@
+<div  class="form-signin">
 <%= form_for  @student do |f| %>
-  <%= f.label :firstname  %>
-  <%= f.text_field :firstname, class:"names" value: @student.firstname%>
-  <%= f.label :lastname %>
-  <%= f.text_field :lastname, class:"names" value: @student.lastname %>
-  <%= f.label :username %>
-  <%= f.text_field :username, class:"names" value: @student.username %>
-  <%= f.label :email %>
-  <%= f.text_field :email, class:"email" value: @student.email%>
-  <%= f.label :password %>
-  <%= f.text_field :password_digest, class:"password" value: @student.password%>
-  <%= f.label :age %>
-  <%= f.number_field :age, class:"age" value: @student.age%>
-  <%= f.label :birthday %>
-  <%= f.text_field :birthday, class:"birthday" value: @student.birthday%>
-  <%= f.label :education %>
-  <%= f.text_field :education, class:"education" value: @student.education%>
+  <%= f.label :firstname, class:"d-block"  %>
+  <%= f.text_field :firstname, class:"names", value: @student.firstname%>
+  <%= f.label :lastname, class:"d-block" %>
+  <%= f.text_field :lastname, class:"names", value: @student.lastname %>
+  <%= f.label :username, class:"d-block" %>
+  <%= f.text_field :username, class:"names", value: @student.username %>
+  <%= f.label :age, class:"d-block" %>
+  <%= f.number_field :age, class:"age", value: @student.age%>
+  <%= f.label :birthday, class:"d-block" %>
+  <%= f.text_field :birthday, class:"birthday", value: @student.birthday%>
+  <%= f.label :education, class:"d-block"  %>
+  <%= f.select :education, ['High School',  'College' , 'Masters',  'Phd']%>
   <%= f.submit %>
 <% end %>
 <%= link_to 'Delete', student_path(@student), method: :delete %>
+</div>

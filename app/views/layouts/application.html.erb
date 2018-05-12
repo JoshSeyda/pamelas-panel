@@ -6,9 +6,10 @@
     <meta name="description" content="Admin Panel for fake school">
     <meta name="author" content="Josh Seyda">
     <link rel="icon" href="#">
-    <title>Pamela's Panel</title>
-    <%= stylesheet_link_tag('application')%>
-    <%= stylesheet_link_tag('dashboard.css')%>
+    <title>Pamela's Panel</title>  
+      <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+      <%= stylesheet_link_tag('dashboard.css')%>
++    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
     <link href="https://fonts.googleapis.com/css?family=PT+Sans" rel="stylesheet">
   </head>
   <body>
@@ -17,12 +18,18 @@
       <div class="row">
         <%= render 'shared/sidebar' %>
         <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-4">
+        <% if notice %>
+          <p class="alert alert-success"><%= notice %></p>
+        <% end %>
+        <% if alert %>
+          <p class="alert alert-danger"><%= alert %></p>
+        <% end %>
           <%= yield %>
         </main>
       </div>
     </div>
 
 
-  <%= javascript_include_tag('application') %>
+
   </body>
 </html>
