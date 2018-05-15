@@ -8,7 +8,7 @@ class StudentsController < ApplicationController
 
     def create
         @new_student = Student.create(student_params)
-        
+        @new_student.build_user(email: params[:email], password: params[:password]).save
     end
 
     def new

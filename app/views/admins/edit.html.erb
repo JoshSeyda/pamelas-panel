@@ -5,9 +5,9 @@
   <%= f.label :lastname, class:"d-block"  %>
   <%= f.text_field :lastname, class:"names" , value: @admin.lastname %>
   <%= f.label :password , class:"d-block" %>
-  <%= f.text_field :password_digest, class:"password" , value: @admin.password_digest%>
+  <%= f.text_field :password, class:"password" , value: @admin.user.password%>
   <%= f.label :email, class:"d-block"  %>
-  <%= f.text_field :email, class:"email" , value: @admin.email%></br>
+  <%= f.text_field :email, class:"email" , value: @admin.user.email%></br>
   <%= submit_tag("Update") %>
 <% end %>
 <%= link_to 'Delete', admin_path(@admin), method: :delete %>

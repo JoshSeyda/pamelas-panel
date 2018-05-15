@@ -2,9 +2,9 @@
 <div  class="form-signin">
 <%= form_for  @cohort do |f| %>
    <%= f.label :start_date, class:"d-block"    %>
-  <%= f.text_field :start_date, class:"names" %>
+  <%= f.text_field :start_date, class:"names", required:true  %>
   <%= f.label :end_date, class:"d-block"   %>
-  <%= f.text_field :end_date, class:"names" %>
+  <%= f.text_field :end_date, class:"names", required:true  %>
   <%= f.hidden_field :course_id, value: params[:id] %>
   <%= f.label :teacher_id, class:"d-block"   %>
   <%= f.text_field :teacher_id, class:"teacher_id" %></br>

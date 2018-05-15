@@ -26,7 +26,9 @@
     <% end %>
   </tbody>
 </table>
+  <% if current_user.user_type_type == "Admin" %>
   <a class="btn btn-lg" href="/cohorts/addstudent/<%= @cohort.id %>" role="button">Add Student</a>
+  <% end %>
   </div>
 </div>
   

@@ -1,11 +1,6 @@
-# README
-
-This README would normally document whatever steps are necessary to get the
-application up and running.
-
-Things you may want to cover:
-
-* Ruby version
+# Pamela's Panel
+### This is a fullstack ruby on rails Admin Panel for a ficticious school.
+#### Created with the Devise Gem for authentication, AJAX rendering for content creation, and Polymorphic inheretance for three different user types. 
 
 * System dependencies
 

@@ -6,7 +6,9 @@
     <p class="lead">This is a modified jumbotron that occupies the entire horizontal space of its parent.</p>
     <hr class="my-4">
   <p>It uses utility classes for typography and spacing to space content out within the larger container.</p>
-  <a class="btn btn-lg" href="#" role="button">Learn more</a>
+  <% if current_user.user_type_type == "Admin" %>
+    <a class="btn btn-lg" href="/admins/new" role="button">New Admin</a>
+  <% end %>
   </div>
 </div>
 <div class="row">

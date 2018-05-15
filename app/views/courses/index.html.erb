@@ -5,16 +5,20 @@
     <h5 class="card-title"><%= dept.name %></h5>
     <p class="card-text"><%= dept.description %></p>
     <a href="/courses/<%= dept.id %>" class="btn">View Cohorts</a>
+    <% if current_user.user_type_type == "Admin" %>
     <a href="/cohorts/new/<%= dept.id %>" class="btn">ADD Cohorts</a>
+    <% end %>
   </div>
 </div>
 <% end %>
 </div>
-
-<!-- Button trigger modal -->
-<button type="button" class="btn student-table offset-5" data-toggle="modal" data-target="#modalCenter">
+  <% if current_user.user_type_type == "Admin" %>
+    <button type="button" class="btn student-table offset-5" data-toggle="modal" data-target="#modalCenter">
 <%= link_to "New", new_course_path(@course), remote: true %>
 </button>
+  <% end %>
+<!-- Button trigger modal -->
+
 
 <!-- Modal -->
 <div class="modal fade " id="modalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
@@ -30,9 +34,9 @@
 <div  class="form-signin">
 <%= form_for  @course, remote: true, authenticity_token: true  do  |f| %>
    <%= f.label :name , class:"d-block"  %>
-  <%= f.text_field :name, class:"names" %>
+  <%= f.text_field :name, class:"names", required:true%>
   <%= f.label :description , class:"d-block" %>
-  <%= f.text_field :description, class:"names" %></br>
+  <%= f.text_field :description, class:"names", required:true %></br>
   <%= f.submit %>
 <% end %>
 </div>

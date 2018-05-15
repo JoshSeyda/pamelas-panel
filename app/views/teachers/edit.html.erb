@@ -16,5 +16,5 @@
   <%= f.text_field :specialty, class:"specialty", value: @teacher.specialty%></br>
   <%= f.submit %>
 <% end %>
-<%= link_to 'Delete', teacher_path(@teacher), method: :delete %>
+<%= link_to 'Delete', teacher_path(@teacher), method: :delete, authenticity_token: true %>
 </div>

@@ -9,12 +9,6 @@ body {
     color: #6B7D7D;
 }
 
-.feather {
-    width: 16px;
-    height: 16px;
-    vertical-align: text-bottom;
-}
-
 
 /* Sidebar */
 
@@ -78,6 +72,7 @@ body {
 
 [role="main"] {
     padding-top: 48px;
+    margin-top: 10%;
     /* Space for fixed navbar  */
 }
 
