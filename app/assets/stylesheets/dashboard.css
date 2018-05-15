@@ -71,15 +71,26 @@ body {
 /* Content */
 
 [role="main"] {
-    padding-top: 48px;
-    margin-top: 10%;
+    padding-top: 64px;
+    height: 100vh;
+    /* margin-top: 10%; */
     /* Space for fixed navbar  */
 }
+
+
+/* .tbl-head {
+    margin-top: 10%;
+}
+
+.alert {
+    margin-top: 10%;
+} */
 
 
 /* Navbar*/
 
 .navbar-brand {
+    font-family: 'Shadows Into Light', cursive;
     padding-top: .75rem;
     padding-bottom: .75rem;
     font-size: 1rem;
@@ -124,7 +135,7 @@ body {
 .jumbotron {
     /* background-color: #f7dec6; */
     background-color: #fff;
-    margin-top: 15%;
+    /* margin-top: 15%; */
 }
 
 .card-header {
