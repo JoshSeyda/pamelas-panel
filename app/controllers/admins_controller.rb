@@ -1,11 +1,13 @@
 class AdminsController < ApplicationController
+    before_action :authenticate_user!
 
     def index
-
+           
     end
 
     def create
         @admin = Admin.create(admin_params)
+        @admin.build_user(email: params[:email], password: params[:password]).save
         redirect_to "/admins/#{@admin.id}"
     end
 
@@ -36,6 +38,6 @@ class AdminsController < ApplicationController
     private 
 
     def admin_params
-       params.require(:admin).permit(:firstname, :lastname, :username, :password_digest, :email) 
+       params.require(:admin).permit(:firstname, :lastname, :username) 
     end
 end

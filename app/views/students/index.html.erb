@@ -1,0 +1,71 @@
+<h3 class="tbl-head"> All Students </h3>
+  <table class="table table-hover">
+  <thead>
+    <tr>
+      <th class="table-head" scope="col">First Name</th>
+      <th class="table-head" scope="col">Last Name</th>
+      <th class="table-head" scope="col">Age</th>
+      <th class="table-head" scope="col">Education</th>
+      <th class="table-head" scope="col"></th>
+    </tr>
+  </thead>
+  <tbody id="student_table">
+<%@students = Student.all%>
+  <% @students.each do |student| %> 
+    <tr>
+      <td scope="row"><%= student.firstname %></td>
+      <td><%= student.lastname %></td>
+      <td><%= student.age %></td>
+      <td><%= student.education %></td>
+      <% if current_user.user_type_type == "Admin" %>
+      <td><a href="/students/<%=student.id%>/edit">Edit</a></td>
+      <% end %>
+    </tr>
+    <% end %>
+  </tbody>
+</table>
+<% if current_user.user_type_type == "Admin" %>
+<!-- Button trigger modal -->
+<button type="button" class="btn student-table offset-5" data-toggle="modal" data-target="#modalCenter">
+<%= link_to "New", new_student_path(@new_student), remote: true %>
+</button>
+<% end %>
+<!-- Modal -->
+<div class="modal fade " id="modalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLongTitle">Add a new Student below</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <div  class="form-signin">
+        <%= form_for  @new_student, remote: true, authenticity_token: true do |f| %>
+          <%= f.label :firstname, class:"d-block"  %>
+          <%= f.text_field :firstname, class:"names", required:true %>
+          <%= f.label :lastname, class:"d-block" %>
+          <%= f.text_field :lastname, class:"names", required:true %>
+          <%= f.label :username, class:"d-block" %>
+          <%= f.text_field :username, class:"names", required:true %>
+          <%= f.label :age, class:"d-block" %>
+          <%= f.number_field :age, class:"age", required:true %>
+          <%= f.label :birthday, class:"d-block" %>
+          <%= f.text_field :birthday, class:"birthday" %>
+          <%= f.label :education, class:"d-block"  %>
+          <%= f.select :education, ['High School',  'College' , 'Masters',  'Phd']%>
+          <%=f.label :email, class:"d-block" %>
+          <input type="email" name="email"  required></input>
+          <%=f.label :password, class:"d-block" %>
+          <input type="password" name="password" required></input></br>
+          <%= f.submit %>
+        <% end %>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>

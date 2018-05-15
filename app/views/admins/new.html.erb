@@ -6,10 +6,10 @@
   <%= f.text_field :lastname, class:"names" %>
   <%= f.label :username , class:"d-block"%>
   <%= f.text_field :username, class:"names" %>
-  <%= f.label :password , class:"d-block"%>
-  <%= f.text_field :password_digest %>
-  <%= f.label :email , class:"d-block"%>
-  <%= f.text_field :email %></br>
+   <%=f.label :email, class:"d-block" %>
+ <input type="email" name="email"></input>
+ <%=f.label :password, class:"d-block" %>
+ <input type="password" name="password"></input></br>
   <%= f.submit %>
 <% end %>
 </div>

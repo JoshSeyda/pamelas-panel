@@ -1,0 +1,25 @@
+<h3 class="student-table"> All Cohorts </h3>
+  <table class="table table-hover">
+  <thead>
+    <tr>
+      <th class="table-head" scope="col">Course Name</th>
+      <th class="table-head" scope="col">Instructor</th>
+      <th class="table-head" scope="col">Start Date</th>
+      <th class="table-head" scope="col">End Date</th>
+      <th class="table-head" scope="col"></th>
+    </tr>
+  </thead>
+  <tbody>
+<% @cohorts.each do |cohort| %> 
+<% @course = Course.find(cohort.course_id)%> 
+<% @teacher = Teacher.find(cohort.teacher_id) %>
+    <tr>
+      <td scope="row"><%= @course.name %></td>
+      <td><%= @teacher.firstname %> <%= @teacher.lastname %></td>
+      <td><%= cohort.start_date%></td>
+      <td><%= cohort.end_date%></td>
+      <td><a href="/cohorts/<%=cohort.id%>">View Cohort</a></td>
+    </tr>
+    <% end %>
+  </tbody>
+</table>

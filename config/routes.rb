@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
 
-  root 'analytics#show'
+  devise_for :users
+  root 'admins#index'
   
   resources :admins
   resources :teachers
@@ -11,8 +12,9 @@ Rails.application.routes.draw do
   resources :calendar
   resources :notes
   resources :analytics
-
-  
+  resources :members
+  get '/cohorts/addstudent/:id', to: 'members#new'
+  get '/cohorts/new/:id', to: 'cohorts#new'
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

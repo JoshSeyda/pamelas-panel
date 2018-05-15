@@ -8,7 +8,7 @@ class AnalyticsController < ApplicationController
     end
 
     def new
-
+      
     end
 
     def edit
@@ -26,4 +26,5 @@ class AnalyticsController < ApplicationController
     def destroy
 
     end
+ 
 end

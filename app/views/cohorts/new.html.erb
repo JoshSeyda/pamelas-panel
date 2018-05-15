@@ -1,11 +1,13 @@
+<h3 class="sm-col-6 offset-4">Add a new cohort below</h3>
+<div  class="form-signin">
 <%= form_for  @cohort do |f| %>
-   <%= f.label :start_date  %>
-  <%= f.text_field :start_date, class:"names" %>
-  <%= f.label :end_date %>
-  <%= f.text_field :end_date, class:"names" %>
-  <%= f.label :course_id %>
-  <%= f.text_field :course_id, class:"course_id" %>
-  <%= f.label :teacher_id %>
-  <%= f.text_field :teacher_id, class:"teacher_id" %>
+   <%= f.label :start_date, class:"d-block"    %>
+  <%= f.text_field :start_date, class:"names", required:true  %>
+  <%= f.label :end_date, class:"d-block"   %>
+  <%= f.text_field :end_date, class:"names", required:true  %>
+  <%= f.hidden_field :course_id, value: params[:id] %>
+  <%= f.label :teacher_id, class:"d-block"   %>
+  <%= f.text_field :teacher_id, class:"teacher_id" %></br>
   <%= f.submit %>
 <% end %>
+</div>

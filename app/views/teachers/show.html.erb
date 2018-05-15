@@ -1,2 +1,31 @@
-<h2>showtime! showtime everybody! EVERYBODY ITS SHOWTIME!</h2>
-<h6>what time is it? show time...</h6>
+<div class="row">
+<div class="card col-sm-12">
+  <div class="card-body">
+    <h5 class="card-title"><%= @teacher.firstname %> <%= @teacher.lastname %></h5>
+    <p class="card-text"><table class="table table-hover">
+  <thead>
+    <tr>
+      <th class="table-head" scope="col">Username</th>
+      <th class="table-head" scope="col">Email</th>
+      <th class="table-head" scope="col">Age</th>
+      <th class="table-head" scope="col">Salary</th>
+      <th class="table-head" scope="col">Education</th>
+      <th class="table-head" scope="col">Specialty</th>
+      <th class="table-head" scope="col"></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td scope="row"><%= @teacher.username %></td>
+      <td><%= @teacher.user.email %></td>
+      <td><%= @teacher.age %></td>
+      <td><%= @teacher.salary %></td>
+      <td><%= @teacher.education %></td>
+      <td><%= @teacher.specialty.join(", ") %></td>
+      <td><a href="/teachers/<%=@teacher.id%>/edit">Edit</a></td>
+    </tr>
+  </tbody>
+</table></p>
+  </div>
+</div>
+</div>

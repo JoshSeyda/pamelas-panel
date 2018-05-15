@@ -1,0 +1,9 @@
+    <tr>
+      <td scope="row"><%= @new_teacher.firstname %></td>
+      <td><%= @new_teacher.lastname %></td>
+      <td><%= @new_teacher.age %></td>
+      <td><%= @new_teacher.salary %></td>
+      <td><%= @new_teacher.education %></td>
+      <td><%= @new_teacher.specialty.join(", ") %></td>
+      <td><a href="/teachers/<%=@new_teacher.id%>/edit">Edit</a></td>
+    </tr>

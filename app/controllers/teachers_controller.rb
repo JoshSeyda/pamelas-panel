@@ -1,15 +1,20 @@
 class TeachersController < ApplicationController
+    before_action :authenticate_user!
+    
     def index
         @teachers = Teacher.all
+        @new_teacher = Teacher.new
     end
 
     def create
-        @teacher = Teacher.create(teacher_params)
-        redirect_to "/teachers/#{@teacher.id}"
+        @new_teacher = Teacher.create(teacher_params)
+        @new_teacher.build_user(email: params[:email], password: params[:password]).save
+       
     end
 
     def new
-        @teacher = Teacher.new
+        @new_teacher = Teacher.new
+        
     end
 
     def show
@@ -23,7 +28,7 @@ class TeachersController < ApplicationController
     def update
         @teacher = Teacher.find(params[:id])
         @teacher.update(teacher_params)
-        redirect_to "/teachers/#{:id}"
+        redirect_to "/teachers/#{@teacher.id}"
     end
 
     def destroy
@@ -35,6 +40,6 @@ class TeachersController < ApplicationController
     private 
 
     def teacher_params
-       params.require(:teacher).permit(:firstname, :lastname, :username, :email, :password_digest, :age, :salary, :education, :birthday, :specialty) 
+       params.require(:teacher).permit(:firstname, :lastname, :username, :age, :salary, :education, :specialty) 
     end
 end

@@ -1,0 +1,8 @@
+<div class="card col-sm-4">
+  <div class="card-body">
+    <h5 class="card-title"><%= @new_course.name %></h5>
+    <p class="card-text"><%= @new_course.description %></p>
+    <a href="/courses/<%= @new_course.id %>" class="btn">View Cohorts</a>
+    <a href="/cohorts/new/<%= @new_course.id %>" class="btn">ADD Cohorts</a>
+  </div>
+</div>
