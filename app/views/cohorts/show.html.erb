@@ -15,7 +15,7 @@
       <th class="table-head" scope="col">Education</th>
     </tr>
   </thead>
-  <tbody>
+  <tbody id="student_table">
     <% @students = @cohort.students %>
     <% @students.each do |student| %>
     <tr>
@@ -26,9 +26,42 @@
     <% end %>
   </tbody>
 </table>
-  <% if current_user.user_type_type == "Admin" %>
-  <a class="btn btn-lg" href="/cohorts/addstudent/<%= @cohort.id %>" role="button">Add Student</a>
-  <% end %>
+  </div>
+</div>
+<% if current_user.user_type_type == "Admin" %>
+<!-- Button trigger modal -->
+<button type="button" class="btn student-table offset-5" data-toggle="modal" data-target="#modalCenter">
+<%= link_to "Add Student", new_member_path(@member), remote: true %>
+</button>
+<% end %>
+<!-- Modal -->
+<div class="modal fade " id="modalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLongTitle">Add a new Student below</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <div  class="form-signin">
+        <h1>Add a student to <%= @cohort.course.name %></h1>
+        <div  class="form-signin">
+        <%= form_for  @member, remote: true, authenticity_token: true do |f| %>
+          <%= f.hidden_field :cohort_id, value: @cohort.id%>
+          <%= f.label :student_id, class:"d-block"    %>
+          <%= f.text_field :student_id, class:"student_id" %>
+          </br>
+          <%= f.submit %>
+        <% end %>
+        </div>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+      </div>
+    </div>
   </div>
 </div>
   

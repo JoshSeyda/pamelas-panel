@@ -2,14 +2,14 @@ class MembersController < ApplicationController
     before_action :authenticate_user! 
     
     def index
-        # @cohort = Cohort.find(params[:id])
-        # @member = CohortStudent.new
-       
+        @cohort = Cohort.find(params[:id])
+        @member = Member.new
+        @cohort = Cohort.create(cohort_params)
     end
 
     def create
         @member = Member.create(member_params)
-        redirect_to "/cohorts/#{@member.cohort_id}"
+        # redirect_to "/cohorts/#{@member.cohort_id}"
     end
 
     def new
