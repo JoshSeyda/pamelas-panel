@@ -1,4 +1,4 @@
-<h1>add a student to <%= @cohort.course.name %></h1>
+<h1>Add a student to <%= @cohort.course.name %></h1>
 <div  class="form-signin">
 <%= form_for  @member do |f| %>
   <%= f.hidden_field :cohort_id, value: @cohort.id%>

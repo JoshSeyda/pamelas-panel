@@ -3,6 +3,7 @@ class CohortsController < ApplicationController
     
     def index
         @cohorts = Cohort.all
+        
     end
 
     def create
@@ -18,6 +19,7 @@ class CohortsController < ApplicationController
     def show
         @cohort = Cohort.find(params[:id])
         @course = Course.find_by(id: @cohort.course_id)
+        @member = Member.new
     end
 
     def edit
