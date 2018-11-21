@@ -1,6 +1,6 @@
 # Pamela's Panel
 ## [Visit The Page](https://pamelas-panel.herokuapp.com/)
-### Log in as test@email.com password = password
+#### Log in as test@email.com password = password
 ## Motivation
 ###### This is a fullstack ruby on rails Admin Panel for a ficticious school. Created with the Devise Gem for authentication, AJAX rendering for content creation, and Polymorphic inheretance for three different user types on the Postgresql database. Has essential CRUD functionality, and room to build out Post-MVP bells and whistles.
 ## Build Status
